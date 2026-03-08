@@ -1,0 +1,84 @@
+/* Navbar.module.css */
+
+/* Navbar container */
+.navbar {
+  background-color: #f87171; /* red-500 */
+  border-bottom: 1px solid black;
+  padding: 0.625rem 1rem; /* py-2.5 px-4 */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 600; /* font-semibold */
+  white-space: nowrap;
+}
+
+/* Links container */
+.links {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* ml-2 spacing */
+}
+
+/* Link styles */
+.link {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem; /* text-sm */
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.linkLogin {
+  color: #000;
+}
+
+.linkLogin:hover {
+  background-color: #f3f4f6; /* gray-50 */
+}
+
+.linkRegister {
+  color: #fff;
+  background-color: #2563eb; /* blue-600 */
+}
+
+.linkRegister:hover {
+  background-color: #1d4ed8; /* blue-700 */
+}
+
+/* Nav menu for desktop */
+.navMenu {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .navMenu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    gap: 2rem; /* spacing between menu items */
+  }
+  .navList {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+  }
+  .navItem a {
+    color: #374151; /* gray-700 */
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+  }
+}
