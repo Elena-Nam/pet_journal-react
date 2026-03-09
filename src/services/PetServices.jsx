@@ -87,6 +87,8 @@ export const deletePet = async (id) => {
   
 export const editPet = async (id, updatedPet) => {
   try {
+     if (!id) throw new Error('Pet ID is missing');
+
     const response = await fetch(`${url}/${id}`, {
       method: 'PATCH', 
       headers: authHeaders,
@@ -97,13 +99,7 @@ export const editPet = async (id, updatedPet) => {
 
     const data = await response.json();
 return data;
-    // return {
-    //   id: data.pet._id,
-    //   name: data.pet.name,
-    //   species: data.pet.species,
-    //   sex: data.pet.sex,
-    //   birthDate: data.pet.birthDate,
-    // };
+  
   } catch (error) {
     console.error('Error updating pet:', error.message);
     throw error;

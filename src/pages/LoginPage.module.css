@@ -1,13 +1,14 @@
-/* Full page container with clouds & flowers background */
+
 .loginContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* justify-content: center;  */
   text-align: center;
   min-height: 100vh;
 
   /* Background image */
-  background: url('/mnt/data/a_digital_illustration_features_an_ethereal_landsc.png') no-repeat center center;
+  /* background: url('/mnt/data/a_digital_illustration_features_an_ethereal_landsc.png') no-repeat center center; */
   background-size: cover;
   color: white;
   padding: 60px 20px;
@@ -40,7 +41,7 @@
   gap: 15px;
   width: 100%;
   max-width: 400px;
-  background: rgba(255, 255, 255, 0.1); /* semi-transparent card */
+  background: rgba(255, 255, 255, 0.1); 
   padding: 40px 20px;
   border-radius: 20px;
   box-shadow: 0 0 30px rgba(0,0,0,0.3);
@@ -82,7 +83,7 @@
 
 /* Login button (primary) */
 .primaryBtn {
-  background: #27AE60; /* slightly darker green */
+  background: #27AE60; 
   color: white;
   border: none;
 }

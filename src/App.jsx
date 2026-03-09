@@ -33,7 +33,7 @@ function App() {
           <Route path="/register" element= {<RegisterPage />} />
           <Route path="/pets" element={<PetsPage />} />
           {/* <Route path="/pets/:id" element={<PetDetails />} />
-          <Route path="/add-pet" element={<AddPet />} /> */} */}
+          <Route path="/add-pet" element={<AddPet />} /> */} 
           <Route path="*" element={<NotFound />} /> 
         </Routes>
       </BrowserRouter>

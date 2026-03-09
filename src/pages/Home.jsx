@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
 import { FaCamera, FaNotesMedical, FaPaw, FaHeartbeat } from "react-icons/fa";
+import Footer from "../components/Footer"
 
 function Home() {
   return (
@@ -56,7 +57,7 @@ function Home() {
         </div>
 
       </div>
-
+        <Footer/>
     </div>
   );
 }

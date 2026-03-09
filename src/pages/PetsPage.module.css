@@ -1,29 +1,27 @@
-html, body, #root {
-  height: 100%;
-  margin: 0;
-}
-
 /* Main container for the pets page */
-/* Main container */
+
 .petsContainer {
+  min-height: 100vh;
+  background: url('/mnt/data/a_digital_illustration_features_an_ethereal_landsc.png') no-repeat center center;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh; /* make container at least full viewport height */
-  width: 100%; /* stretch full width */
-  background: linear-gradient(to bottom, #5DA9F6, #1E3A8A);
-  color: white;
+   color: white;
   padding: 40px 20px;
   text-align: center;
-  box-sizing: border-box; /* include padding in width */
+  box-sizing: border-box; 
 }
 
-/* Header */
-.pets-container h1 {
-  font-size: 3rem;
-  margin-bottom: 30px;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+.title{
+  font-size: 4rem;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+   gap: 10px; 
 }
+
 
 /* Grid for pet circles */
 .pet_grid {
@@ -31,9 +29,42 @@ html, body, #root {
   gap: 30px;
   flex-wrap: wrap;
   justify-content: center;
-  /* grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); */
  grid-template-columns: repeat(5, 1fr);
-  /* max-width: calc(150px * 5 + 30px * 4); 5 columns + gaps */
+
+}
+
+/* Container for the pill button */
+.pillButtonGroup {
+  display: flex;
+  overflow: hidden;
+  border-radius: 9999px; /* fully rounded ends */
+  border: none;
+  background: rgba(0,0,0,0.5);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  gap: 2px;
+  margin-top: 10px;
+}
+
+.pillButtonGroup button {
+ flex: 1;                  /* <-- makes buttons equal width */
+  border: none;
+  background: none;
+  color: white;
+  padding: 10px 0;   
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* font-size: 16px; */
+  transition: background 0.2s ease;
+}
+
+.pillButtonGroup button:first-child {
+  border-right: 1px solid rgba(255, 255, 255, 0.5); 
+}
+
+.pillButtonGroup button:hover {
+  background-color: #27AE60;
 }
 
 /* Pet circle buttons */
@@ -43,7 +74,7 @@ html, body, #root {
   height: 15rem;
   border-radius: 50%;
   overflow: hidden;
-  border: 3px solid white;
+  border: 5px solid white;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
 }
@@ -71,26 +102,30 @@ html, body, #root {
   font-size: 2rem;
   color: white;
 }
+
+
 /* Add Pet button styled like pet card */
 .addPetButton {
   width: 15rem;
   height: 15rem;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
-  color: white;
-  font-size: 3rem;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(6px);
+  color: #1E3A8A;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   border: none;
   margin-top: 20px;
-  transition: background 0.3s, transform 0.2s;
+ margin-bottom: 20px;
 }
 
+
 .addPetButton:hover {
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.5);
   transform: scale(1.05);
+   box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
 /* Add pet form */
@@ -106,5 +141,17 @@ html, body, #root {
   padding: 8px 12px;
   border-radius: 6px;
   border: none;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  
+}
+.pet-form button {
+  background: #27AE60;
+ font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+}
+.pet-form button:hover{
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 
+              0 0 25px rgba(135, 206, 250, 0.5);
 }
