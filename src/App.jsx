@@ -5,8 +5,8 @@ import './App.css'
 import Home from './pages/Home';
 import RegisterPage from './pages/RegisterPage';
 import LoginPage from './pages/LoginPage';
-
 import PetsPage from './pages/PetsPage';
+import ProtectedRoute from './components/ProtectedRoute';
 // import PetProfilePage from './pages/PetProfilePage';
 
 import NotFound from './pages/NotFound';
@@ -31,9 +31,15 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<LoginPage />} /> 
           <Route path="/register" element= {<RegisterPage />} />
-          <Route path="/pets" element={<PetsPage />} />
-          {/* <Route path="/pets/:id" element={<PetDetails />} />
-          <Route path="/add-pet" element={<AddPet />} /> */} 
+          <Route path="/pets" element={
+            <ProtectedRoute>
+              <PetsPage />
+              {/* <PetProfilePage /> */}
+            </ProtectedRoute>
+          } />
+          {/* <Route path="/pets" element={<PetsPage />} /> */}
+           {/* <Route path="/pets/:id" element={<PetProfile />} /> */}
+          
           <Route path="*" element={<NotFound />} /> 
         </Routes>
       </BrowserRouter>

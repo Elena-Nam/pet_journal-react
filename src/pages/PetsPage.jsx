@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import styles from './PetsPage.module.css';
 import { FaPlus, FaEdit, FaTrash} from "react-icons/fa";
 import Footer from "../components/Footer"
-
+import Navbar from "../components/Navbar";
 function PetsPage() {
   const [pets, setPets] = useState([]);
   const [editingPet, setEditingPet] = useState(null);
@@ -84,8 +84,10 @@ const handleEditPet = (pet) => {
 };
 
 
-  return (
+  return ( <>
+  <Navbar/>
     <div className= {styles.petsContainer}>
+          
       <h1 className = {styles.title}> My Pets </h1>
       {loading ? (
         <p>Loading...</p>
@@ -151,6 +153,8 @@ const handleEditPet = (pet) => {
 
         <Footer/>
     </div>
+
+    </>
   );
 }
 

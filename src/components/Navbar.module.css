@@ -1,10 +1,8 @@
-/* Navbar.module.css */
-
-/* Navbar container */
-.navbar {
-  background-color: #f87171; /* red-500 */
+.navbar {background: red;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.3);
   border-bottom: 1px solid black;
-  padding: 0.625rem 1rem; /* py-2.5 px-4 */
+  padding: 0.625rem 1rem; 
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -13,62 +11,49 @@
   margin: 0 auto;
 }
 
-/* Logo */
-.logo {
-  display: flex;
-  align-items: center;
-  font-size: 1.25rem; /* text-xl */
-  font-weight: 600; /* font-semibold */
-  white-space: nowrap;
+
+.active {
+  color: #000;
 }
+
 
 /* Links container */
 .links {
   display: flex;
   align-items: center;
-  gap: 0.5rem; /* ml-2 spacing */
-}
-
-/* Link styles */
-.link {
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  font-size: 0.875rem; /* text-sm */
-  border-radius: 0.5rem;
-  font-weight: 500;
-  transition: background-color 0.2s;
-}
-
-.linkLogin {
+  gap: 3rem; 
   color: #000;
 }
 
-.linkLogin:hover {
-  background-color: #f3f4f6; /* gray-50 */
+.link {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem; 
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  color: #000;
 }
 
-.linkRegister {
-  color: #fff;
-  background-color: #2563eb; /* blue-600 */
-}
 
-.linkRegister:hover {
-  background-color: #1d4ed8; /* blue-700 */
+
+.link:hover{
+color: rgba(255, 255, 255, 0.8);
+
 }
 
 /* Nav menu for desktop */
-.navMenu {
+/* .navMenu {
   display: none;
-}
-
+} */
+/* 
 @media (min-width: 1024px) {
   .navMenu {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: auto;
-    gap: 2rem; /* spacing between menu items */
-  }
+    gap: 2rem;
   .navList {
     display: flex;
     list-style: none;
@@ -77,8 +62,8 @@
     padding: 0;
   }
   .navItem a {
-    color: #374151; /* gray-700 */
+    color: #374151;
     text-decoration: none;
     padding: 0.5rem 0.75rem;
   }
-}
+} */

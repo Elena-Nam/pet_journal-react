@@ -2,8 +2,8 @@
 
 .petsContainer {
   min-height: 100vh;
-  background: url('/mnt/data/a_digital_illustration_features_an_ethereal_landsc.png') no-repeat center center;
-  background-size: cover;
+  /* background: url('/mnt/data/a_digital_illustration_features_an_ethereal_landsc.png') no-repeat center center;
+  background-size: cover; */
   display: flex;
   flex-direction: column;
   align-items: center;
