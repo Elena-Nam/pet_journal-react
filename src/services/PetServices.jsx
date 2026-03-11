@@ -1,5 +1,6 @@
 
-const url = `http://localhost:3000/api/v1/pets`;
+// const url = `http://localhost:3000/api/v1/pets`;
+const API_URL = "https://pet-journal-r991.onrender.com/api/v1/pets";
 
 const getAuthHeaders = () => {
   const token = localStorage.getItem('token');
@@ -17,7 +18,7 @@ export const fetchAllPets = async () => {
   };
 
   try {
-    const response = await fetch(url, options);
+    const response = await fetch(API_URL, options);
     if (!response.ok) {
       throw new Error(`Error: ${response.status}`);
     }
@@ -45,7 +46,7 @@ export  const addPet = async (newPet) => {
   };
   
   try {
-    const response = await fetch(url, options);
+    const response = await fetch(API_URL, options);
     if (!response.ok) {
       throw new Error(`Error: ${response.status}`);
     }
@@ -64,7 +65,7 @@ export  const addPet = async (newPet) => {
 
 
 export const deletePet = async (id) => {
-  const removeUrl = `${url}/${id}`;
+  const removeUrl = `${API_URL}/${id}`;
   const options = {
     method: 'DELETE',
     headers: getAuthHeaders()
@@ -86,7 +87,7 @@ export const deletePet = async (id) => {
 export const editPet = async (id, updatedPet) => {
   try {
     if (!id) throw new Error('Pet ID is missing');
-    const response = await fetch(`${url}/${id}`, {
+    const response = await fetch(`${API_URL}/${id}`, {
       method: 'PATCH', 
       headers: getAuthHeaders(),
       body: JSON.stringify(updatedPet),

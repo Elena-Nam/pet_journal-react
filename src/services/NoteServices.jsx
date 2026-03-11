@@ -1,4 +1,7 @@
-const url = `http://localhost:3000/api/v1/pets`;
+import { AiFillPauseCircle } from "react-icons/ai";
+
+// const url = `http://localhost:3000/api/v1/pets`;
+const API_URL = "https://pet-journal-r991.onrender.com/api/v1/pets";
 
 const getAuthHeaders = () => {
   const token = localStorage.getItem('token');
@@ -14,7 +17,7 @@ export const fetchAllNotes = async (petId) => {
   };
 
   try {
-    const response = await fetch(`${url}/${petId}/notes`, options);
+    const response = await fetch(`${API_URL}/${petId}/notes`, options);
     if (!response.ok) {
       throw new Error(`Error: ${response.status}`);
     }
@@ -36,7 +39,7 @@ export const fetchAllNotes = async (petId) => {
    
   
 export  const addNote = async (petId, newNote) => {
-  console.log('Adding note to URL:', `${url}/${petId}/notes`, 'Data:', newNote);
+  console.log('Adding note to URL:', `${API_URL}/${petId}/notes`, 'Data:', newNote);
   const options = {
     method: 'POST',
     headers: getAuthHeaders(),
@@ -44,7 +47,7 @@ export  const addNote = async (petId, newNote) => {
   };
    
   try {
-    const response = await fetch(`${url}/${petId}/notes`, options);
+    const response = await fetch(`${API_URL}/${petId}/notes`, options);
     if (!response.ok) {
       throw new Error(`Error: ${response.status}`);
     }
@@ -66,7 +69,7 @@ export  const addNote = async (petId, newNote) => {
 
 export const deleteNote = async (petId, noteId) => {
   
-  const removeUrl = `${url}/${petId}/notes/${noteId}`;
+  const removeUrl = `${API_URL}/${petId}/notes/${noteId}`;
   console.log('Deleting note URL:', removeUrl);
   const options = {
     method: 'DELETE',
@@ -90,7 +93,7 @@ export const deleteNote = async (petId, noteId) => {
 export const editNote = async (petId, noteId, noteData) => {
   try {
     if (!noteId) throw new Error('NoteID is missing');
-    const response = await fetch(`${url}/${petId}/notes/${noteId}`, {
+    const response = await fetch(`${API_URL}/${petId}/notes/${noteId}`, {
       method: 'PATCH', 
       headers: getAuthHeaders(),
       body: JSON.stringify(noteData),

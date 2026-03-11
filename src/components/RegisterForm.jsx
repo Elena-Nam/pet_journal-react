@@ -32,7 +32,10 @@ const navigate = useNavigate();
     setLoading(true);
 
     try {
-      const res = await fetch('http://localhost:3000/api/v1/auth/register', {
+      // localUrl = 'http://localhost:3000/api/v1/auth/register';
+      
+    const API_URL = "https://pet-journal-r991.onrender.com/api/v1/auth/register";
+      const res = await fetch(API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
