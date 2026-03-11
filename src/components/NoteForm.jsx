@@ -1,81 +1,77 @@
-import * as React from 'react';
-import styles from './TodoListItem.module.css';
-import PropTypes from 'prop-types';
-import { FaTrash, FaEdit, FaCheck, FaSave, FaHourglassHalf } from 'react-icons/fa';  
+import styles from "../pages/PetProfilePage.module.css"
+import React, { useState, useEffect } from "react";
 
-function TodoListItem ({todo, onRemoveTodo, onEditTodo, onToggleStatus}) {
-  const [isEditing, setIsEditing] = React.useState(false); // Track if the item is being edited
-  const [newTitle, setNewTitle] = React.useState(todo.title); // Store the edited title
-    
-  // Handle save of the edited todo item
-  const handleSaveEdit = () => {
-    onEditTodo(todo.id, newTitle); // Call the onEditTodo function from the parent (App)
-    setIsEditing(false); // Exit edit mode
-  };
-    
-      // Handle canceling the edit and reverting to the original title
-  const handleCancelEdit = () => {
-    setIsEditing(false); // Exit edit mode
-    setNewTitle(todo.title); // Revert to the original title
-  };
+function NoteForm({ initialData = null, onSubmit, onCancel }) {
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  const [category, setCategory] = useState("");
+  const [date, setDate] = useState("");
 
-  const handleToggleStatus = () => {
-    onToggleStatus(todo.id, todo.status); // Trigger the status toggle for the current todo
-  };
- 
-  // show dates from createdAt field 
-  const formattedDate = new Date(todo.createdAt).toLocaleDateString('en-GB', {
-    day: '2-digit',
-    month: 'short',
-    year: 'numeric',
-  }); 
   
+  useEffect(() => {
+    if (initialData) {
+      setTitle(initialData.title || "");
+      setContent(initialData.content || "");
+      setCategory(initialData.category || "");
+      setDate(initialData.date || "");
+    } else {
+      setTitle("");
+      setContent("");
+      setCategory("");
+      setDate("");
+    }
+  }, [initialData]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmit({ title, content, category, date, id: initialData?._id || null });
+  };
 
   return (
-  <div className ={styles.ListItem}>
-    <li>
-      {isEditing ? (
-       <div className={styles.button_group}>
+    <div >
+      <h1>{initialData?._id ? "Edit Note" : "Add Note"}</h1>
+      <form onSubmit={handleSubmit} className={styles['note-form']}>
         <input
-          type="text"
-          value={newTitle}
-          onChange={(e) => setNewTitle(e.target.value)} // Update the title as the user types
+          name="title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          placeholder="Title"
+          required
         />
-          <button type="button" className="button" onClick={handleSaveEdit}><FaSave size={15} /></button>
-          <button type="button" className="button" onClick={handleCancelEdit}><FaTrash size={15} /></button>
-        </div>
-        ) : (
-        <div className ={styles.todo_group}>
-          <span> {todo.title} </span>
-          <span> {formattedDate} </span>
-        </div>
-      )}
-    </li>
-
-  <div className={styles.button_group}>
-    {!isEditing && (
-      <>
-        <button type="button" className="button" onClick={() => setIsEditing(true)}>
-          <FaEdit size={15} />
+        <textarea
+          name="content"
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
+          placeholder="Content"
+          required
+        />
+        <select
+          name="category"
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+          required
+        >
+          <option value="">Select Category</option>
+          <option value="health">Health</option>
+          <option value="behavior">Behavior</option>
+          <option value="vet">Vet</option>
+          <option value="diet">Diet</option>
+          <option value="other">Other</option>
+        </select>
+        <input
+          type="date"
+          name="date"
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
+          required
+        />
+        <button type="submit">{initialData?._id ? "Save" : "Add"}</button>
+        <button type="button" onClick={onCancel}>
+          Cancel
         </button>
-        <button type="button" className="button" onClick={() => onRemoveTodo(todo.id)}>
-          <FaTrash size={15} />
-        </button>
-        <button type="button" className="button" onClick={handleToggleStatus}>
-          {todo.status ? <FaCheck size={15} /> : <FaHourglassHalf size={15} />}
-        </button>
-      </>
-    )}
-  </div>
-</div>
-);
+      </form>
+    </div>
+  );
 }
 
-TodoListItem.propTypes = {
-  todo: PropTypes.object.isRequired,
-  onRemoveTodo: PropTypes.func.isRequired,
-  onEditTodo: PropTypes.func.isRequired,
-  onToggleStatus: PropTypes.func.isRequired
-}
-
-export default TodoListItem;
+export default NoteForm;

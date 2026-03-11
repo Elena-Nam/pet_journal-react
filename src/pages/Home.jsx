@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
 import { FaCamera, FaNotesMedical, FaPaw, FaHeartbeat } from "react-icons/fa";
-import Footer from "../components/Footer"
+import petsImage from "../assets/pets.png"; 
 
 function Home() {
   return (
@@ -16,7 +16,9 @@ function Home() {
       <p className={styles.tagline}>
         Track your pet's life and cherish every moment.
       </p>
-
+      <div className={styles.imageWrapper}>
+        <img src={petsImage} alt="Pets" className={styles.petsImage} />
+      </div>
       <div className={styles.buttonGroup}>
         <Link to="/register">
           <button className={styles.primaryBtn}>Get Started</button>
@@ -57,7 +59,7 @@ function Home() {
         </div>
 
       </div>
-        <Footer/>
+      
     </div>
   );
 }

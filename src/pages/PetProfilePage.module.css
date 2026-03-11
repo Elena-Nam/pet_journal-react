@@ -1,0 +1,211 @@
+.petProfileContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+}
+
+/* Layout for 3 columns */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  gap: 20px;
+  padding: 40px 40px;
+  flex: 1;
+  margin-top: 50px;
+}
+
+/* Each column */
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Sorting section */
+.sorting {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.sorting select {
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  backdrop-filter: blur(6px);
+  background: rgba(255,255,255,0.7);
+}
+
+.sorting button {
+   display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;;
+}
+
+/* Filters container */
+.notesFilters {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.notesFilters select,
+.notesFilters input {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  backdrop-filter: blur(6px);
+  background: rgba(255,255,255,0.7);
+
+} 
+
+
+/* Placeholder color */
+.notesFilters input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Focus effect for inputs/selects */
+.notesFilters input:focus,
+.notesFilters select:focus {
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+
+/* Pet information section */
+.petInfo {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.petInfo h1 {
+  font-size: 24px;
+}
+
+/* Notes section */
+.notesSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Notes cards grid */
+.notesCards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+
+/* Container for search input + icon */
+.searchBox {
+  position: relative;
+  width: 100%;
+  max-width: 250px;
+}
+
+/* The icon inside input */
+.searchIcon {
+  position: absolute;
+  right: 2px;         
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  pointer-events: none; 
+}
+
+
+.searchBox input {
+  width: 100%;
+  padding: 6px 10px 6px 5px; /* left padding = icon width + space */
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+ 
+  background: rgba(255,255,255,0.7);
+}
+
+.note-form {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(6px);
+  color: #1E3A8A;
+  padding: 40px 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.3);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+
+
+.note-form input,.note-form textarea, .note-form select, .note-form button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: black;
+  font-size: 1rem;
+  background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(173, 216, 230, 0.7)); 
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  width: 80%;
+}
+
+.note-form button {
+  background: #27AE60;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  width: 30%;
+}
+
+.note-form button:hover{
+  transform: scale(1.05);
+} 
+
+
+/* Container for the button */
+.addBtn button {
+  background-color: #27AE60; 
+  color: white;              
+  border: none;
+  border-radius: 50px;       
+  padding: 12px 28px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+/* Hover effect */
+.addBtn button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(39, 174, 96, 0.6),
+              0 0 25px rgba(135, 206, 250, 0.3);
+}
+
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .notesCards {
+    grid-template-columns: 1fr;
+  }
+}

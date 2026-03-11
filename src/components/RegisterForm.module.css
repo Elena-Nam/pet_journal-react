@@ -18,8 +18,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
-  /* Remove default h1 margin */
   margin: 0;
 }
 
@@ -28,10 +26,9 @@
   font-size: 1.5rem;
   max-width: 500px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.3);
-
-  /* Reduce spacing under tagline */
   margin: 0 0 10px 0;
 }
+
 /* Form container */
 .form {
   display: flex;
@@ -67,7 +64,6 @@
 /* Buttons */
 .primaryBtn {
   border-radius: 50px;
-  /* font-weight: bold; */
   font-size: 1.5rem;
   padding: 12px 28px;
   cursor: pointer;

@@ -1,0 +1,65 @@
+/* Note Card Container */
+.noteCard {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  padding: 16px 20px;
+  margin: 10px 0;
+  display: flex;
+  gap: 20px;
+  /* flex-direction: column; */
+  transition: transform 0.2s, box-shadow 0.2s;
+  font-weight: bold;
+}
+
+.noteCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.noteItem {
+  margin: 4px 0;
+  color: #1e3a8a; /* Deep blue for text */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  word-wrap: break-word;
+}
+
+/* Buttons Container */
+.noteButtons {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+/* Buttons Style */
+.noteButtons button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+
+/* Edit Button */
+.noteButtons button:first-child {
+  background-color: #3b82f6; /* Blue */
+  color: black;
+  font-weight: bold;
+}
+
+.noteButtons button:first-child:hover {
+  background-color: #2563eb;
+}
+
+/* Delete Button */
+.noteButtons button:last-child {
+  background-color: #ef4444; /* Red */
+  color: black;
+  font-weight: bold;
+}
+
+.noteButtons button:last-child:hover {
+  background-color: #b91c1c;
+}

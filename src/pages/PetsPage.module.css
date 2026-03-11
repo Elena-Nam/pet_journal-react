@@ -1,13 +1,9 @@
-/* Main container for the pets page */
-
 .petsContainer {
   min-height: 100vh;
-  /* background: url('/mnt/data/a_digital_illustration_features_an_ethereal_landsc.png') no-repeat center center;
-  background-size: cover; */
   display: flex;
   flex-direction: column;
   align-items: center;
-   color: white;
+  color: white;
   padding: 40px 20px;
   text-align: center;
   box-sizing: border-box; 
@@ -37,7 +33,7 @@
 .pillButtonGroup {
   display: flex;
   overflow: hidden;
-  border-radius: 9999px; /* fully rounded ends */
+  border-radius: 9999px; 
   border: none;
   background: rgba(0,0,0,0.5);
   cursor: pointer;
@@ -47,7 +43,7 @@
 }
 
 .pillButtonGroup button {
- flex: 1;                  /* <-- makes buttons equal width */
+  flex: 1;                  /* <-- makes buttons equal width */
   border: none;
   background: none;
   color: white;
@@ -129,29 +125,41 @@
 }
 
 /* Add pet form */
+
 .pet-form {
-  margin-bottom: 40px;
+background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(6px);
+  color: #1E3A8A;
+  padding: 40px 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.3);
+  width: 100%;
+  max-width: 400px;
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
 }
+
 
 .pet-form input, .pet-form select, .pet-form button {
   padding: 8px 12px;
   border-radius: 6px;
-  border: none;
+  border: black;
   font-size: 1rem;
-  
+  background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(173, 216, 230, 0.7)); 
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+width: 80%;
 }
+
 .pet-form button {
   background: #27AE60;
- font-size: 1.2rem;
+ font-size: 1rem;
   font-weight: bold;
   color: white;
+  width: 30%;
 }
+
 .pet-form button:hover{
   transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 
-              0 0 25px rgba(135, 206, 250, 0.5);
-}
+} 

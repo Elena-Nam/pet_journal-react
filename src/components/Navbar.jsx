@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./Navbar.module.css";
-import {FaHome, FaDog, FaTasks} from "react-icons/fa";
+import {FaHome, FaTasks} from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";
 import { PiDog } from "react-icons/pi";
 
@@ -32,10 +32,8 @@ function Navbar() {
           <FiLogOut /> Sign out
         </button>
       </div>  
-</div>
+    </div>
     </nav>
-
-
     
   );
 }

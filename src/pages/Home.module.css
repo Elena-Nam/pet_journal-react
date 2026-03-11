@@ -1,4 +1,3 @@
-/* Container for the whole page */
 .aboutContainer {
   display: flex;
   flex-direction: column;
@@ -7,32 +6,55 @@
   min-height: 100vh;
   background: linear-gradient(to bottom, #5DA9F6, #1E3A8A);
   color: white;
-  padding: 60px 20px;
-  gap: 40px;
+  width: 100%;
+  
 }
 
 /* Title/Header */
 .title {
+  font-size: clamp(2rem, 5vw, 4rem); 
+  display: flex;
   font-size: 4rem;
   text-shadow: 0 2px 6px rgba(0,0,0,0.3);
-  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px; 
+  gap: 50px; 
 }
 
 /* Tagline under title */
+
+.title, .tagline {
+  margin: 10px;      /* remove default margin */
+  padding: 10px;     /* remove any extra padding */
+}
 .tagline {
   font-size: 2rem;
   max-width: 500px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.3);
-  margin-bottom: 40px;
+}
+
+/* Image wrapper to control size */
+.imageWrapper {
+  width: 100%;
+  /* height: auto;  */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.petsImage {
+  width: 100%; 
+  max-height: 350px; 
+  object-fit: contain;
+  border-radius: 20px;
+  margin-bottom: 20px;
 }
 
 /* Buttons container */
 .buttonGroup {
   display: flex;
   gap: 20px;
+  margin-bottom: 20px;
 }
 
 /* Button styles */
@@ -45,7 +67,6 @@
   transition: all 0.2s;
 }
 
-
 .primaryBtn {
   background: #27AE60;
   color: white;
@@ -57,7 +78,6 @@
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 
               0 0 25px rgba(135, 206, 250, 0.5);
 }
-
 
 .secondaryBtn {
   background: white;
@@ -118,4 +138,11 @@
   text-align: center;
   color: white;
   margin: 0;
+}
+
+@media (max-width: 768px) {
+  .petsImage {
+    width: 90%;
+    max-height: 200px;
+  }
 }
