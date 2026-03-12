@@ -12,7 +12,7 @@ import Modal from "../components/Modal";
 
 function PetProfilePage() {
   const { id: petId } = useParams();
-  console.log("PetProfilePage petId:", petId);
+  // console.log("PetProfilePage petId:", petId);
   const [notes, setNotes] = useState([]);
   const [editingNote, setEditingNote] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -69,7 +69,7 @@ function PetProfilePage() {
 
   const handleDeleteNote = async ( noteId) => {
     try{
-    console.log('Deleting note:', noteId, 'for pet:', petId);
+    // console.log('Deleting note:', noteId, 'for pet:', petId);
     await deleteNote(petId, noteId);
     setNotes(prev => prev.filter(note => (note.id || note._id) !== noteId));
     } catch (error) {

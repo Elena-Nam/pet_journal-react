@@ -19,7 +19,7 @@ function LoginForm() {
 
   const handleSubmit = async(e) => {
     e.preventDefault();
-    console.log("Login form submitted:", formData);
+    // console.log("Login form submitted:", formData);
     setMessage('');
     setMessageType('');
     setLoading(true);

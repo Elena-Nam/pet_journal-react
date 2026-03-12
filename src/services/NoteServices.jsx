@@ -39,8 +39,8 @@ export const fetchAllNotes = async (petId) => {
    
   
 export  const addNote = async (petId, newNote) => {
-  console.log('Adding note to URL:', `${API_URL}/${petId}/notes`, 'Data:', newNote);
-  const options = {
+  // console.log('Adding note to URL:', `${API_URL}/${petId}/notes`, 'Data:', newNote);
+    const options = {
     method: 'POST',
     headers: getAuthHeaders(),
     body: JSON.stringify(newNote),
@@ -70,7 +70,7 @@ export  const addNote = async (petId, newNote) => {
 export const deleteNote = async (petId, noteId) => {
   
   const removeUrl = `${API_URL}/${petId}/notes/${noteId}`;
-  console.log('Deleting note URL:', removeUrl);
+  // console.log('Deleting note URL:', removeUrl);
   const options = {
     method: 'DELETE',
     headers: getAuthHeaders(),
