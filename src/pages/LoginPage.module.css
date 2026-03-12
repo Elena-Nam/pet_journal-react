@@ -1,0 +1,107 @@
+
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  background-size: cover;
+  color: white;
+  padding: 60px 20px;
+  gap: 40px;
+}
+
+/* Title/Header */
+.title {
+  font-size: 4rem;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Tagline under title */
+.tagline {
+  font-size: 2rem;
+  max-width: 500px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  margin-bottom: 40px;
+}
+
+/* Form container */
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.1); 
+  padding: 40px 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.3);
+}
+
+/* Input fields */
+.inputField {
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: 50px;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.inputField::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.inputField:focus {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+/* Buttons */
+.primaryBtn, .secondaryBtn {
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 12px 28px;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+/* Login button (primary) */
+.primaryBtn {
+  background: #27AE60; 
+  color: white;
+  border: none;
+}
+
+.primaryBtn:hover {
+  background: #219150;
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* Secondary button */
+.secondaryBtn {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.secondaryBtn:hover {
+  background: rgba(255,255,255,0.2);
+  transform: scale(1.05);
+}
+
+.formLink:hover {
+  text-decoration: underline;
+}

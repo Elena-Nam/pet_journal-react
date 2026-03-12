@@ -1,0 +1,92 @@
+.aboutContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  /* Reduce padding to shrink container */
+  padding: 20px 20px;
+
+  /* Reduce gap between title, tagline, form */
+  gap: 10px;
+}
+
+/* Title/Header */
+.title {
+  font-size: 3rem;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+/* Tagline under title */
+.tagline {
+  font-size: 1.5rem;
+  max-width: 500px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  margin: 0 0 10px 0;
+}
+
+/* Form container */
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Input fields */
+.inputField {
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: 50px;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+  background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(173, 216, 230, 0.7));
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.inputField::placeholder {
+  color: #0D47A1;
+}
+
+.inputField:focus {
+  background: rgb(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+/* Buttons */
+.primaryBtn {
+  border-radius: 50px;
+  font-size: 1.5rem;
+  padding: 12px 28px;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 70%;
+  background: #27AE60; 
+  border: none;
+}
+
+.primaryBtn:hover {
+  background: #219150;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 
+              0 0 25px rgba(135, 206, 250, 0.5);
+} 
+
+/* Link below form */
+.aboutContainer p a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.aboutContainer p a:hover {
+  text-decoration: underline;
+}

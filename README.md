@@ -1,16 +1,38 @@
-# React + Vite
+Pet Journal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based web application to manage and track your pets’ profiles, notes, and activities. Users can add pets, log notes, upload images, and categorize events in a simple, intuitive dashboard.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Features
 
-## React Compiler
+Create, edit, and delete pet profiles
+Upload and display pet images
+Add, edit, and delete notes associated with each pet
+Filter notes by category, search, and sorting
+Responsive design for mobile and desktop
+Interactive and user-friendly UI
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Demo:
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+Installation:
+git clone https://github.com/Elena-Nam/pet_journal-react.git
+cd pet_journal
+npm install
+npm start
+
+Runs at http://localhost:5173
+
+Usage:
+Navigate to the Pets page to see all pet profiles.
+Click Add Pet to create a new pet profile.
+Click a pet card to view detailed notes and add new entries.
+Use the filters and search bar to manage and sort notes efficiently.
+
+Tech Stack:
+Frontend: React, React Router
+Styling: CSS Modules
+Icons: Font Awesome, React Icons
+Data Handling: REST API services, fetch / Axios
+Deployment: GitHub Pages, Render, or Netlify

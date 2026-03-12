@@ -1,0 +1,38 @@
+.navbar {background: red;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.3);
+  border-bottom: 1px solid black;
+  padding: 0.625rem 1rem; 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+
+.active {
+  color: #000;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 3rem; 
+  color: #000;
+}
+
+.link {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem; 
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  color: #000;
+}
+
+.link:hover{
+color: rgba(255, 255, 255, 0.8);
+}
